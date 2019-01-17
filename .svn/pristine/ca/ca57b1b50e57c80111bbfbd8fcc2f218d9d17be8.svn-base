@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webApiHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>d901bd52-179b-42b3-a40f-c3c3054e46ee</versionUuid>
+    <webApi a:uuid="863a7dfb-d456-4401-a98b-aeecaaa04555" name="Test_GetWebApi">
+        <a:description></a:description>
+        <a:expression>with(
+  /*
+  * If there is a username specified in the query string of the HTTP request,
+  * we'll retrieve information about the specified user.  If there is no
+  * username specified then we'll retrieve information about the user that is
+  * executing the Web API.
+  */
+  local!username: if(
+    isnull(http!request.queryParameters.username),
+    loggedInUser(),
+    http!request.queryParameters.username
+  ),
+
+  /*
+  * Retrieve information about the user using the 'user()' function and assemble
+  * this information into a dictionary and store that dictionary in a local
+  * variable named 'local!user'.
+  */
+  local!user: {
+    firstName: user(local!username, "firstName"),
+    lastName: user(local!username, "lastName"),
+    email: user(local!username, "email"),
+    phoneNumber: user(local!username, "phoneOffice")
+  },
+
+  /*
+  * Construct an HTTP response that contains the information that we just stored
+  * in 'local!user'.
+  */
+  #"SYSTEM_SYSRULES_httpResponse_v1"(
+    /*
+    * Set an HTTP header that tells the client that the body of the response
+    * will be JSON-encoded.
+    */
+    headers: {
+      #"SYSTEM_SYSRULES_httpHeader"(name: "Content-Type", value: "application/json")
+    },
+    /*
+    * JSON-encode the value of 'local!user' and place it in the response body.
+    */
+    body: #"SYSTEM_SYSRULES_toJson_v1"(value: local!user)
+  )
+)</a:expression>
+        <a:urlAlias>getuserdetails</a:urlAlias>
+        <a:httpMethod>GET</a:httpMethod>
+        <a:system>false</a:system>
+    </webApi>
+    <roleMap/>
+    <typedValue>
+        <type>
+            <name>WebApiRequest?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:path/>
+                <a:queryParameters>
+                    <a:name>username</a:name>
+                    <a:value>Anupam.Kumar@mindtree.com</a:value>
+                </a:queryParameters>
+                <a:body/>
+            </el>
+        </value>
+    </typedValue>
+    <history>
+        <historyInfo versionUuid="d901bd52-179b-42b3-a40f-c3c3054e46ee"/>
+    </history>
+</webApiHaul>

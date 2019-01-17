@@ -1,0 +1,39 @@
+Success (1):
+processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a "sdfsf"
+
+Referenced precedents that were not exported (1):
+processModelFolder 31 _g-0000e1dd-5918-8000-f92f-7f0000014e7a_102
+
+Trace:
+2019-01-11 12:10:10.569 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Begin transport.
+2019-01-11 12:10:10.569 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Retrieving object data.
+2019-01-11 12:10:10.591 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Setting uuids of object references.
+2019-01-11 12:10:10.591 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: ProcessModelHaul.folderId
+2019-01-11 12:10:10.592 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: ProcessModelHaul.modelDashboardPageId
+2019-01-11 12:10:10.592 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: ProcessModelHaul.processDashboardPageId
+2019-01-11 12:10:10.592 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: ProcessModel.emailAttachmentFolderId
+2019-01-11 12:10:10.593 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=pmID,it=23,v=<null>]
+2019-01-11 12:10:10.593 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=inMap,it=111,v={}]
+2019-01-11 12:10:10.594 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=procInheritsPriority,it=1,v=1]
+2019-01-11 12:10:10.594 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=pmUUID,it=3,v=]
+2019-01-11 12:10:10.594 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=isAsynchronous,it=26,v=1]
+2019-01-11 12:10:10.594 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=isTransparent,it=26,v=1]
+2019-01-11 12:10:10.594 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=inheritSecurity,it=26,v=0]
+2019-01-11 12:10:10.594 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: com.appiancorp.suiteapi.process.ProcessRoleMap@7b983ab5[
+  Role[name=ADMIN_OWNER]
+  Role[name=EDITOR]
+  Role[name=EXPLICIT_NONMEMBER]
+  Role[name=VIEWER]
+  Role[name=MANAGER]
+  Role[name=INITIATOR]
+]
+2019-01-11 12:10:10.594 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: Role[name=ADMIN_OWNER]
+2019-01-11 12:10:10.594 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: Role[name=EDITOR]
+2019-01-11 12:10:10.594 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: Role[name=EXPLICIT_NONMEMBER]
+2019-01-11 12:10:10.594 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: Role[name=VIEWER]
+2019-01-11 12:10:10.594 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: Role[name=MANAGER]
+2019-01-11 12:10:10.594 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Processing reference: Role[name=INITIATOR]
+2019-01-11 12:10:10.594 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Completing produce.
+2019-01-11 12:10:10.594 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Exporting binary resources.
+2019-01-11 12:10:10.594 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Serializing object to XML.
+2019-01-11 12:10:10.758 DEBUG processModel 1251 0002e1f5-5bd4-8000-f92f-7f0000014e7a Object transported.

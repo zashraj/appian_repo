@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e1b1-d335-8000-9ba2-011c48011c48_24893</versionUuid>
+    <rule>
+        <name>MQ_ManagerForm</name>
+        <uuid>_a-0000e1b1-d335-8000-9ba2-011c48011c48_23180</uuid>
+        <description>Quote form where manager can edit or approve the quote</description>
+        <parentUuid>_a-0000e1b1-d335-8000-9ba2-011c48011c48_23145</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#"SYSTEM_SYSRULES_formLayout_v1"(
+  label: "Form",
+  contents: {
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      label: "Policy Details",
+      contents: {
+        #"SYSTEM_SYSRULES_sideBySideLayout"(
+          items: {
+            #"SYSTEM_SYSRULES_sideBySideItem"(
+              item: #"SYSTEM_SYSRULES_dateField"(
+                label: "Policy Effective Date",
+                labelPosition: "ADJACENT",
+                value: ri!MQ_MotorQuoteDetails.PolicyEffectiveDate,
+                saveInto: ri!MQ_MotorQuoteDetails.PolicyEffectiveDate,
+                readonly: true,
+                validations: {}
+              )
+            ),
+            #"SYSTEM_SYSRULES_sideBySideItem"(
+              item: #"SYSTEM_SYSRULES_dateField"(
+                label: "Policy Expiry Date",
+                labelPosition: "ADJACENT",
+                value: ri!MQ_MotorQuoteDetails.PolicyExpiryDate,
+                saveInto: ri!MQ_MotorQuoteDetails.PolicyExpiryDate,
+                readonly: true,
+                validations: {}
+              )
+            ),
+            #"SYSTEM_SYSRULES_sideBySideItem"(
+              item: #"SYSTEM_SYSRULES_floatingPointField"(
+                label: "Policy Coverage",
+                labelPosition: "ABOVE",
+                value: ri!MQ_MotorQuoteDetails.PolicyCoverage,
+                saveInto: ri!MQ_MotorQuoteDetails.PolicyCoverage,
+                refreshAfter: "UNFOCUS",
+                validations: {}
+              )
+            )
+          }
+        )
+      }
+    ),
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      label:                            "Vehicle Details",
+      contents: {
+        #"SYSTEM_SYSRULES_columnsLayout"(
+          columns: {
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "Vehicle Make",
+                  labelPosition: "ADJACENT",
+                  value: ri!MQ_MotorQuoteDetails.VehicleMake,
+                  refreshAfter: "UNFOCUS",
+                  readonly: true,
+                  validations: {}
+                )
+              }
+            ),
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "Vehicle Color",
+                  labelPosition: "ADJACENT",
+                  value: ri!MQ_MotorQuoteDetails.VehicleColor,
+                  saveInto: ri!MQ_MotorQuoteDetails.VehicleColor,
+                  refreshAfter: "UNFOCUS",
+                  readonly: true,
+                  validations: {}
+                )
+              }
+            ),
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "Registration Number",
+                  labelPosition: "ADJACENT",
+                  value: ri!MQ_MotorQuoteDetails.VehicleRegNum,
+                  saveInto: ri!MQ_MotorQuoteDetails.VehicleRegNum,
+                  refreshAfter: "UNFOCUS",
+                  readonly: true,
+                  validations: {}
+                )
+              }
+            )
+          }
+        )
+      },
+      marginbelow: "STANDARD"
+    ),
+    #"SYSTEM_SYSRULES_columnsLayout"(
+      columns: {
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_textField"(
+              label: "Vehicle Model",
+              labelPosition: "ADJACENT",
+              value: ri!MQ_MotorQuoteDetails.VehicleModel,
+              saveInto: ri!MQ_MotorQuoteDetails.VehicleModel,
+              refreshAfter: "UNFOCUS",
+              readonly: true,
+              validations: {}
+            )
+          }
+        ),
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_textField"(
+              label: "Vehicle Usage",
+              labelPosition: "ADJACENT",
+              value: ri!MQ_MotorQuoteDetails.VehicleUsage,
+              saveInto: ri!MQ_MotorQuoteDetails.VehicleUsage,
+              refreshAfter: "UNFOCUS",
+              readonly: true,
+              validations: {}
+            )
+          }
+        ),
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_textField"(
+              label: "Vehicle Type",
+              labelPosition: "ADJACENT",
+              value: ri!MQ_MotorQuoteDetails.VehicleType,
+              saveInto: ri!MQ_MotorQuoteDetails.VehicleType,
+              refreshAfter: "UNFOCUS",
+              readonly: true,
+              validations: {}
+            )
+          }
+        )
+      }
+    ),
+    #"SYSTEM_SYSRULES_columnsLayout"(
+      columns: {
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_dateField"(
+              label: "Year Of Manufacture",
+              labelPosition: "ADJACENT",
+              value: ri!MQ_MotorQuoteDetails.YearOfManufacture,
+              saveInto: ri!MQ_MotorQuoteDetails.YearOfManufacture,
+              readonly: true,
+              validations: {}
+            )
+          }
+        ),
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_floatingPointField"(
+              label: "ODO Meter Reading",
+              labelPosition: "ADJACENT",
+              value: ri!MQ_MotorQuoteDetails.VehicleOdometerReading,
+              saveInto: ri!MQ_MotorQuoteDetails.VehicleOdometerReading,
+              refreshAfter: "UNFOCUS",
+              readonly: true,
+              validations: {}
+            )
+          }
+        ),
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_textField"(
+              label: "Transmission Type",
+              labelPosition: "ADJACENT",
+              saveInto: {},
+              refreshAfter: "UNFOCUS",
+              readonly: true,
+              validations: {}
+            )
+          }
+        )
+      }
+    ),
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      label: "Insured Details",
+      contents: {
+        #"SYSTEM_SYSRULES_columnsLayout"(
+          columns: {
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "First Name",
+                  labelPosition: "ADJACENT",
+                  value: ri!MQ_MotorQuoteDetails.FirstName,
+                  saveInto: ri!MQ_MotorQuoteDetails.FirstName,
+                  refreshAfter: "UNFOCUS",
+                  readonly: true,
+                  validations: {}
+                )
+              }
+            ),
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_dateField"(
+                  label: "Date Of Birth",
+                  labelPosition: "ADJACENT",
+                  value: ri!MQ_MotorQuoteDetails.DOB,
+                  saveInto: {},
+                  readonly: true,
+                  validations: {}
+                )
+              }
+            ),
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "Address Line 1",
+                  labelPosition: "ADJACENT",
+                  value: ri!MQ_MotorQuoteDetails.AddressLine1,
+                  saveInto: ri!MQ_MotorQuoteDetails.AddressLine1,
+                  refreshAfter: "UNFOCUS",
+                  readonly: true,
+                  validations: {}
+                )
+              }
+            )
+          }
+        ),
+        #"SYSTEM_SYSRULES_columnsLayout"(
+          columns: {
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "Second Name",
+                  labelPosition: "ADJACENT",
+                  value: ri!MQ_MotorQuoteDetails.MiddleName,
+                  saveInto: ri!MQ_MotorQuoteDetails.MiddleName,
+                  refreshAfter: "UNFOCUS",
+                  readonly: true,
+                  validations: {}
+                )
+              }
+            ),
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "City",
+                  labelPosition: "ADJACENT",
+                  value: ri!MQ_MotorQuoteDetails.City,
+                  saveInto: ri!MQ_MotorQuoteDetails.City,
+                  refreshAfter: "UNFOCUS",
+                  readonly: true,
+                  validations: {}
+                )
+              }
+            ),
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "Address Line 2",
+                  labelPosition: "ADJACENT",
+                  value: ri!MQ_MotorQuoteDetails.AddressLine2,
+                  saveInto: ri!MQ_MotorQuoteDetails.AddressLine2,
+                  refreshAfter: "UNFOCUS",
+                  readonly: true,
+                  validations: {}
+                )
+              }
+            )
+          }
+        ),
+        #"SYSTEM_SYSRULES_columnsLayout"(
+          columns: {
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "Last Name",
+                  labelPosition: "ADJACENT",
+                  value: ri!MQ_MotorQuoteDetails.LastName,
+                  saveInto: ri!MQ_MotorQuoteDetails.LastName,
+                  refreshAfter: "UNFOCUS",
+                  readonly: true,
+                  validations: {}
+                )
+              }
+            ),
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {},
+              width: "AUTO"
+            ),
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_integerField"(
+                  label: "Zipcode",
+                  labelPosition: "ADJACENT",
+                  value: ri!MQ_MotorQuoteDetails.Zipcode,
+                  saveInto: ri!MQ_MotorQuoteDetails.Zipcode,
+                  refreshAfter: "UNFOCUS",
+                  readonly: true,
+                  validations: {}
+                )
+              }
+            )
+          }
+        )
+      }
+    ),
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      label: "License Details",
+      contents: {
+        #"SYSTEM_SYSRULES_columnsLayout"(
+          columns: {
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_integerField"(
+                  label: "License Number",
+                  labelPosition: "ADJACENT",
+                  value: ri!MQ_MotorQuoteDetails.LicenseNumber,
+                  saveInto: ri!MQ_MotorQuoteDetails.LicenseNumber,
+                  refreshAfter: "UNFOCUS",
+                  readonly: true,
+                  validations: {}
+                )
+              }
+            ),
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_dateField"(
+                  label: "Effective Date",
+                  labelPosition: "ADJACENT",
+                  saveInto: {},
+                  readonly: true,
+                  validations: {}
+                )
+              }
+            )
+          }
+        ),
+        #"SYSTEM_SYSRULES_columnsLayout"(
+          columns: {
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "Place Of Issue",
+                  labelPosition: "ADJACENT",
+                  value: ri!MQ_MotorQuoteDetails.LicensePlaceOfIssue,
+                  saveInto: ri!MQ_MotorQuoteDetails.LicensePlaceOfIssue,
+                  refreshAfter: "UNFOCUS",
+                  readonly: true,
+                  validations: {}
+                )
+              }
+            ),
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_dateField"(
+                  label: "Expiry Date",
+                  labelPosition: "ABOVE",
+                  value: ri!MQ_MotorQuoteDetails.PolicyExpiryDate,
+                  saveInto: ri!MQ_MotorQuoteDetails.PolicyExpiryDate,
+                  readonly: true,
+                  validations: {}
+                )
+              }
+            )
+          }
+        )
+      }
+    )
+  },
+  buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+    primaryButtons: {
+      #"SYSTEM_SYSRULES_ButtonWidget"(
+        label: "Submit",
+        submit: true,
+        style: "PRIMARY"
+      )
+    },
+    secondaryButtons: {}
+  )
+)</definition>
+        <namedTypedValue>
+            <name>MQ_MotorQuoteDetails</name>
+            <type>
+                <name>MotorQuoteCDT</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <metadataExpr></metadataExpr>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e1b1-d335-8000-9ba2-011c48011c48_24893"/>
+    </history>
+</contentHaul>

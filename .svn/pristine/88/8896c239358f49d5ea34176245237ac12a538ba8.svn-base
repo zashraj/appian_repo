@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<processModelFolderHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_g-0000e1b1-d335-8000-f92f-7f0000014e7a_38</versionUuid>
+    <processModelFolder>
+        <name>MQ_ProcessModels</name>
+        <uuid>_g-0000e1b1-d335-8000-f92f-7f0000014e7a_35</uuid>
+        <description>This folder contains all the process models of motor quote application</description>
+    </processModelFolder>
+    <roleMap>
+        <role name="ADMIN_OWNER">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000e1b1-d335-8000-9aee-01075c01075c_21</groupUuid>
+            </groups>
+        </role>
+        <role name="EDITOR">
+            <users/>
+            <groups/>
+        </role>
+        <role name="EXPLICIT_NONMEMBER">
+            <users/>
+            <groups/>
+        </role>
+        <role name="VIEWER">
+            <users/>
+            <groups/>
+        </role>
+        <role name="MANAGER">
+            <users/>
+            <groups/>
+        </role>
+        <role name="INITIATOR">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_g-0000e1b1-d335-8000-f92f-7f0000014e7a_38"/>
+    </history>
+</processModelFolderHaul>

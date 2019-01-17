@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<connectedSystemHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e1b1-d335-8000-9ba2-011c48011c48_22916</versionUuid>
+    <connectedSystem>
+        <name>IEA_CurrentWeather</name>
+        <uuid>_a-0000e1b1-d335-8000-9ba2-011c48011c48_22600</uuid>
+        <description>this will give the current weather of the city</description>
+        <parentUuid>SYSTEM_COMMUNITY_ROOT</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <sharedConfigParameters>
+            <a:Dictionary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <configurationDescriptor xsi:type="xsd:string"/>
+                <url xsi:type="xsd:string"/>
+                <isInheritedUrlOptionSelected xsi:type="xsd:boolean">false</isInheritedUrlOptionSelected>
+                <baseUrl xsi:type="xsd:string">https://api.openweathermap.org</baseUrl>
+                <authType xsi:type="xsd:string">API Key</authType>
+                <authDetails xsi:type="a:Dictionary">
+                    <apiKeyName xsi:type="xsd:string">appid</apiKeyName>
+                    <apiKeyValue xsi:type="a:EncryptedText"/>
+                    <sendAsHeader xsi:type="xsd:boolean">false</sendAsHeader>
+                </authDetails>
+            </a:Dictionary>
+        </sharedConfigParameters>
+        <logoChoice></logoChoice>
+        <integrationType>system.http</integrationType>
+    </connectedSystem>
+    <roleMap public="true">
+        <role inherit="false" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e1b1-d335-8000-9ba2-011c48011c48_22916"/>
+    </history>
+</connectedSystemHaul>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e1b1-d335-8000-9ba2-011c48011c48_22307</versionUuid>
+    <rule>
+        <name>LMS_ApplyLeaveRequest</name>
+        <uuid>_a-0000e1b1-d335-8000-9ba2-011c48011c48_21937</uuid>
+        <description>Add basic details like id,employee name,dob etc.</description>
+        <parentUuid>_a-0000e1b1-d335-8000-9ba2-011c48011c48_21931</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#"SYSTEM_SYSRULES_formLayout_v1"(
+  label: "Apply Leave",
+  contents: {
+    #"SYSTEM_SYSRULES_columnsLayout"(
+      columns: {
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_sectionLayout_v1"(
+              label: "",
+              contents: {
+                #"SYSTEM_SYSRULES_sideBySideLayout"(
+                  items: {
+                    #"SYSTEM_SYSRULES_sideBySideItem"(
+                      item: #"SYSTEM_SYSRULES_integerField"(
+                        label: "ID",
+                        labelPosition: "ABOVE",
+                        value: ri!employee.employeeId,
+                        saveInto: ri!employee.employeeId,
+                        refreshAfter: "UNFOCUS",
+                        required: true,
+                        validations: {}
+                      )
+                    )
+                  }
+                ),
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "USER NAME",
+                  labelPosition: "ABOVE",
+                  value: ri!employee.userName,
+                  saveInto: ri!employee.userName,
+                  refreshAfter: "UNFOCUS",
+                  required: true,
+                  validations: {}
+                ),
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "EMPLOYEE NAME",
+                  labelPosition: "ABOVE",
+                  value: ri!employee.employeeName,
+                  saveInto: ri!employee.employeeName,
+                  refreshAfter: "UNFOCUS",
+                  required: true,
+                  validations: {}
+                ),
+                #"SYSTEM_SYSRULES_dateField"(
+                  label: "DOB",
+                  labelPosition: "ABOVE",
+                  value: ri!employee.dob,
+                  saveInto: ri!employee.dob,
+                  validations: {}
+                ),
+                #"SYSTEM_SYSRULES_integerField"(
+                  label: "EXPERIENCE",
+                  labelPosition: "ABOVE",
+                  value: ri!employee.experience,
+                  saveInto: ri!employee.experience,
+                  refreshAfter: "UNFOCUS",
+                  validations: {}
+                )
+              }
+            )
+          }
+        ),
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_sectionLayout_v1"(
+              label: "",
+              contents: {
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "PROJECT",
+                  labelPosition: "ABOVE",
+                  value: ri!employee.project,
+                  saveInto: ri!employee.project,
+                  refreshAfter: "UNFOCUS",
+                  required: true,
+                  validations: {}
+                ),
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "MANAGER",
+                  labelPosition: "ABOVE",
+                  value: ri!employee.manager,
+                  saveInto: ri!employee.manager,
+                  refreshAfter: "UNFOCUS",
+                  required: true,
+                  validations: {}
+                ),
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "HR NAME",
+                  labelPosition: "ABOVE",
+                  value: ri!employee.hrName,
+                  saveInto: ri!employee.hrName,
+                  refreshAfter: "UNFOCUS",
+                  required: true,
+                  validations: {}
+                ),
+                #"SYSTEM_SYSRULES_integerField"(
+                  label: "NO OF LEAVE",
+                  labelPosition: "ABOVE",
+                  value: ri!employee.noOfLeaves,
+                  saveInto: ri!employee.noOfLeaves,
+                  refreshAfter: "UNFOCUS",
+                  required: true,
+                  validations: {}
+                )
+              }
+            )
+          }
+        )
+      }
+    )
+  },
+  buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+    primaryButtons: {
+      #"SYSTEM_SYSRULES_ButtonWidget"(
+        label: "Submit",
+        submit: true,
+        style: "PRIMARY"
+      )
+    },
+    secondaryButtons: {
+      #"SYSTEM_SYSRULES_ButtonWidget"(
+        label: "CANCEL",
+        style: "NORMAL"
+      )
+    }
+  )
+)</definition>
+        <namedTypedValue>
+            <name>employee</name>
+            <type>
+                <name>LMS_Employee</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <metadataExpr></metadataExpr>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e1b1-d335-8000-9ba2-011c48011c48_22307"/>
+    </history>
+</contentHaul>

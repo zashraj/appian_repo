@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webApiHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>90e2dc86-02bd-4c47-942a-dd3f66954f19</versionUuid>
+    <webApi a:uuid="eebe6337-d320-4f18-877c-60fb6153d03a" name="MQ_QuoteWebApi">
+        <a:description></a:description>
+        <a:expression>with(
+  #"SYSTEM_SYSRULES_startProcess"(
+    processModel: #"_a-0000e1b1-d335-8000-9ba2-011c48011c48_24358",
+    processParameters: #"SYSTEM_SYSRULES_fromJson"(
+      http!request.body
+    )
+    ,
+    onSuccess: #"SYSTEM_SYSRULES_httpResponse_v1"(
+      statusCode: 200,
+      headers: {
+        #"SYSTEM_SYSRULES_httpHeader"(name: "Content-Type", value: "application/json")
+      },
+      body: #"SYSTEM_SYSRULES_toJson_v1"(
+        fv!processInfo.pv.responseData
+      )
+    ),
+    onError: #"SYSTEM_SYSRULES_httpResponse_v1"(
+      statusCode: 500,
+      headers: {
+        #"SYSTEM_SYSRULES_httpHeader"(name: "Content-Type", value: "application/json")
+      },
+      body: #"SYSTEM_SYSRULES_toJson_v1"(
+        {
+          error: "There was an error starting the process"
+        }
+      )
+    )
+  )
+ 
+
+)</a:expression>
+        <a:urlAlias>quote</a:urlAlias>
+        <a:httpMethod>POST</a:httpMethod>
+        <a:system>false</a:system>
+    </webApi>
+    <roleMap/>
+    <typedValue>
+        <type>
+            <name>WebApiRequest?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:path/>
+                <a:headers>
+                    <a:name>Content-Type</a:name>
+                    <a:value>application/json</a:value>
+                </a:headers>
+                <a:body>{}</a:body>
+            </el>
+        </value>
+    </typedValue>
+    <history>
+        <historyInfo versionUuid="90e2dc86-02bd-4c47-942a-dd3f66954f19"/>
+    </history>
+</webApiHaul>

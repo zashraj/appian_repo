@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webApiHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>20cb33eb-1200-44d5-9314-3c44b8925c45</versionUuid>
+    <webApi a:uuid="811b5f02-595b-4793-9c52-cf6bd16513ab" name="Test_SaveUserWriteToDatabase">
+        <a:description></a:description>
+        <a:expression>with(
+  local!value: cast(
+    'type!{urn:com:appian:types:USER}USER_DataType',
+    #"SYSTEM_SYSRULES_fromJson"(http!request.body)
+  ),
+  #"SYSTEM_SYSRULES_writeToDataStoreEntity"(
+    dataStoreEntity: #"_a-0000e1b1-d335-8000-9ba2-011c48011c48_23818",
+    valueToStore: local!value,
+    onSuccess: #"SYSTEM_SYSRULES_httpResponse_v1"(
+      statusCode: 200,
+      headers: {
+        #"SYSTEM_SYSRULES_httpHeader"(name: "Content-Type", value: "application/json")
+      },
+      body: #"SYSTEM_SYSRULES_toJson_v1"(
+        fv!storedValues
+      )
+    ),
+    onError: #"SYSTEM_SYSRULES_httpResponse_v1"(
+      statusCode: 500,
+      headers: {
+        #"SYSTEM_SYSRULES_httpHeader"(name: "Content-Type", value: "application/json")
+      },
+      body: #"SYSTEM_SYSRULES_toJson_v1"(
+        {
+          error: "There was an error writing to the data store"
+        }
+      )
+    )
+  )
+)</a:expression>
+        <a:urlAlias>writetodatabase</a:urlAlias>
+        <a:httpMethod>POST</a:httpMethod>
+        <a:system>false</a:system>
+    </webApi>
+    <roleMap/>
+    <typedValue>
+        <type>
+            <name>WebApiRequest?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:path/>
+                <a:headers>
+                    <a:name>Content-Type</a:name>
+                    <a:value>application/json</a:value>
+                </a:headers>
+                <a:body>{}</a:body>
+            </el>
+        </value>
+    </typedValue>
+    <history>
+        <historyInfo versionUuid="20cb33eb-1200-44d5-9314-3c44b8925c45"/>
+    </history>
+</webApiHaul>

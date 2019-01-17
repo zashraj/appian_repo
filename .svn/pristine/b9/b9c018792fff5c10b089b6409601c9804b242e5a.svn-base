@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webApiHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>01eb55c1-54d2-4154-971d-a4ce3c30f024</versionUuid>
+    <webApi a:uuid="4a0822af-0367-4449-8acd-370ed5c6e3ca" name="Test_SaveUserResponseWebApi">
+        <a:description></a:description>
+        <a:expression></a:expression>
+        <a:urlAlias>response</a:urlAlias>
+        <a:httpMethod>POST</a:httpMethod>
+        <a:system>false</a:system>
+    </webApi>
+    <roleMap/>
+    <history>
+        <historyInfo versionUuid="01eb55c1-54d2-4154-971d-a4ce3c30f024"/>
+    </history>
+</webApiHaul>

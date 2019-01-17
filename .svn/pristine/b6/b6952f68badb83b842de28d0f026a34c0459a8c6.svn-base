@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e1b1-d335-8000-9ba2-011c48011c48_26745</versionUuid>
+    <rule>
+        <name>userForm</name>
+        <uuid>_a-0000e1b1-d335-8000-9ba2-011c48011c48_25714</uuid>
+        <description></description>
+        <parentUuid>_a-0000e1b1-d335-8000-9ba2-011c48011c48_21931</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#"SYSTEM_SYSRULES_formLayout_v1"(
+  label: "User Details",
+  contents: {
+    #"SYSTEM_SYSRULES_boxLayout"(
+      label: "",
+      contents: {
+        #"SYSTEM_SYSRULES_columnsLayout"(
+          columns: {
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_sectionLayout_v1"(
+                  label: "User",
+                  contents: {
+                    #"SYSTEM_SYSRULES_sideBySideLayout"(
+                      items: {
+                        #"SYSTEM_SYSRULES_sideBySideItem"(
+                          item: #"SYSTEM_SYSRULES_textField"(
+                            label: "First Name",
+                            labelPosition: "ABOVE",
+                            value: ri!user.firstName,
+                            saveInto: ri!user.firstName,
+                            refreshAfter: "UNFOCUS",
+                            validations: {}
+                          )
+                        ),
+                        #"SYSTEM_SYSRULES_sideBySideItem"(
+                          item: #"SYSTEM_SYSRULES_textField"(
+                            label: "Last Name",
+                            labelPosition: "ABOVE",
+                            value: ri!user.lastName,
+                            saveInto: ri!user.lastName,
+                            refreshAfter: "UNFOCUS",
+                            validations: {}
+                          )
+                        )
+                      }
+                    ),
+                    #"SYSTEM_SYSRULES_sideBySideLayout"(
+                      items: {
+                        #"SYSTEM_SYSRULES_sideBySideItem"(
+                          item: #"SYSTEM_SYSRULES_textField"(
+                            label: "Email",
+                            labelPosition: "ABOVE",
+                            value: ri!user.email,
+                            saveInto: ri!user.email,
+                            refreshAfter: "UNFOCUS",
+                            validations: {}
+                          )
+                        ),
+                        #"SYSTEM_SYSRULES_sideBySideItem"(
+                          item: #"SYSTEM_SYSRULES_integerField"(
+                            label: "Phone Number",
+                            labelPosition: "ABOVE",
+                            value: ri!user.phoneNumber,
+                            saveInto: ri!user.phoneNumber,
+                            refreshAfter: "UNFOCUS",
+                            validations: {}
+                          )
+                        )
+                      }
+                    )
+                  }
+                )
+              }
+            )
+          }
+        )
+      },
+      style: "STANDARD",
+      marginBelow: "STANDARD"
+    )
+  },
+  buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+    primaryButtons: {
+      #"SYSTEM_SYSRULES_ButtonWidget"(
+        label: "Submit",
+        submit: true,
+        style: "PRIMARY"
+      )
+    },
+    secondaryButtons: {
+      #"SYSTEM_SYSRULES_ButtonWidget"(
+        label: "Cancel",
+        value: true,
+        saveInto: ri!cancel,
+        submit: true,
+        style: "NORMAL",
+        validate: false
+      )
+    }
+  )
+)</definition>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>user</name>
+            <type>
+                <name>USER_DataType</name>
+                <namespace>urn:com:appian:types:USER</namespace>
+            </type>
+        </namedTypedValue>
+        <metadataExpr></metadataExpr>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e1b1-d335-8000-9ba2-011c48011c48_25740"/>
+        <historyInfo versionUuid="_a-0000e1b1-d335-8000-9ba2-011c48011c48_26745"/>
+    </history>
+</contentHaul>
